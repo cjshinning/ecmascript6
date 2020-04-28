@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>1.let和const命令</title>
+</head>
+<body>
+    <script>
+    // {
+    //     let a = 10;
+    //     var b = 1;
+    // }
+
+    // console.log(a); //Uncaught ReferenceError: a is not defined
+    // console.log(b); //1
+
+    // for(let i=0;i<10;i++){
+
+    // }
+    // console.log(i); //1.let和const命令.html:22 Uncaught ReferenceError: i is not defined
+    
+    // var a = [];
+    // for(var i=0;i<10;i++){
+    //     a[i] = function(){
+    //         console.log(i);
+    //     }
+    // }
+    // a[6](); //10
+    // a[5](); //10 
+
+    // var a = [];
+    // for(let i=0;i<10;i++){
+    //     a[i] = function(){
+    //         console.log(i);
+    //     }
+    // }
+    // a[6](); //6
+    // a[5](); //5
+
+    // console.log(foo);   //undefined
+    // var foo = 2;
+
+    // console.log(bar);   //Uncaught ReferenceError: Cannot access 'bar' before initialization
+    // let bar = 2;
+
+    // function func(){
+    //     let a = 10;
+    //     var a = 1;
+    // }
+
+    // function func(){
+    //     let a = 10;
+    //     let a = 1;
+    // }
+
+    // var tmp = new Date();
+
+    // function f(){
+    //     console.log(tmp);
+    //     if(false){
+    //         var tmp = 'hello world';
+    //     }
+    // }
+
+    // f();    //undefined，内部的变量提升覆盖了外部的
+
+    // var s = 'hello';
+
+    // for(var i=0;i<s.length;i++){
+    //     console.log(s[i]);
+    // }
+
+    // console.log(i);
+    // 变量i只用来控制循环，但是循环结束后，它并没有消失，泄露成了全局变量。
+
+    // function f1(){
+    //     let n = 5;
+    //     if(true){
+    //         let n = 10;
+    //     }
+    //     console.log(n); //5
+    // }
+
+    // f1();
+    // 上面的函数有两个代码块，都声明了变量n，运行后输出 5。这表示外层代码块不受内层代码块的影响。如果两次都使用var定义变量n，最后输出的值才是 10。
+
+    // function f(){
+    //     console.log('I am inside!');
+    // }
+
+    // (function(){
+    //     if(false){
+    //         function f(){
+    //             console.log('I am outside    s!');
+    //         }
+    //     }
+    //     f();
+    // }())
+    // ES6:Uncaught TypeError: f is not a function
+
+    // const PI = 3.1415;
+    // console.log(PI);
+
+    // PI = 3;
+
+    // const foo;  //Uncaught SyntaxError: Missing initializer in const declaration
+    // const只声明不赋值，就会报错
+
+    // if(true){
+    //     const MAX = 5;
+    // }
+    // MAX;    //Uncaught ReferenceError: MAX is not defined
+
+    const foo = {};
+
+    // // 为foo添加一个属性，可以成功
+    // foo.prop = 123;
+    // console.log(foo.prop);
+
+    // // 将foo指向另一个对象，就会报错
+    // foo = {};
+
+    // const a = [];
+    // a.push('Hello');
+    // a.length = 0;
+    // a = ['Dava'];   //报错
+
+    // const foo = Object.freeze({});
+
+    // foo.prop = 123;
+
+    // var a = 1;
+    // console.log(window.a);  //1
+
+    // let b = 1;
+    // console.log(window.b);  //undefined
+    </script>
+</body>
+</html>
