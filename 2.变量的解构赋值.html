@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.变量的解构赋值</title>
+</head>
+<body>
+    <script>
+        // ES5
+        // let a = 1;
+        // let b = 2;
+        // let c = 3;
+
+        // ES6
+        // let [a,b,c] = [1,2,3];
+
+        // let [foo,[[bar]],baz] = [1,[[2]],3];
+        // console.log(foo);
+        // console.log(bar);
+        // console.log(baz);
+
+        // let [,,third] = ['foo', 'bar', 'baz'];
+        // console.log(third);
+
+        // let [x,,y] = [1,2,3];
+        // console.log(x); //1
+        // console.log(y); //3
+
+        // let [head, ...tail] = [1,2,3,4];
+        // console.log(head);  //1
+        // console.log(tail);  //2,3,4
+
+        // let [x,y,...z] = ['a'];
+        // console.log(x); //a
+        // console.log(y); //undefined
+        // console.log(z); //[]
+        
+        // 不完全解构
+        // let [foo] = [];
+        // let [bar, baz] = [1];
+        // console.log(foo);   //undefined
+        // console.log(bar);   //1
+        // console.log(baz);   //undefined
+
+        // let [x,y,z] = new Set(['a','b','c']);
+        // console.log(x);
+        // console.log(y);
+        // console.log(z);
+
+        // let {foo, bar} = {foo: 'aaa', bar: 'bbb'};
+        // console.log(foo);   //aaa
+        // console.log(bar);   //bbb
+        
+        // 数组解构必须按顺序，但是对象不用
+        // let {bar, foo} = {foo: 'aaa', bar: 'bbb'};
+        // console.log(foo);   //aaa
+        // console.log(bar);   //bbb
+
+        // let {baz} = {foo: 'aaa', bar: 'bbb'};
+        // console.log(baz);   //undefined
+
+        // let {log, sin, cos} = Math;
+        // console.log(log(10));
+
+        // const {log} = console;  
+        // log('hello');   //hello
+
+        // let { foo: baz} = {foo: 'aaa', bar: 'bbb'};
+        // console.log(baz);   //aaa
+
+        // let obj = {first: 'hello', last: 'world'};
+        // let {first: f, last: l} = obj;
+        // console.log(f); //hello
+        // console.log(l); //world
+
+        // let obj = {
+        //     p: [
+        //         'hello',
+        //         {y: 'world'}
+        //     ]
+        // };
+
+        // let {p: [x, {y}]} = obj;
+        // console.log(x, y);
+
+        // let obj = {
+        //     p: [
+        //         'hello',
+        //         {y: 'world'}
+        //     ]
+        // };
+
+        // let {p, p: [x, {y}]} = obj;
+        // console.log(p);
+        // console.log(x);
+        // console.log(y);
+
+        // var {x=3} = {};
+        // console.log(x);
+
+        // var {x,y=5} = {x:1};
+        // console.log(x);
+        // console.log(y);
+
+        // var {x:y=3} = {};
+        // console.log(y);
+
+        // var {message: msg = 'Something went wrong'} = {};
+        // console.log(msg);
+
+        // var {x=3} = {x: undefined};
+        // console.log(x);     //3
+
+        // var {x=3} = {x:null};
+        // console.log(x);     //null
+
+        // const [a,b,c,d,e] = 'hello';
+        // console.log(a); //h
+        // console.log(b); //e
+        // console.log(c); //l
+        // console.log(d); //l
+        // console.log(e); //o
+
+        // let {length: len} = 'hello';
+        // console.log(len);
+
+        // let {toString: s} = 123;
+        // console.log(s === Number.prototype.toString);
+
+        // let {toString: s} = true;
+        // console.log(s === Boolean.prototype.toString);
+
+        // function add([x, y]){
+        //     return x+y;
+        // }
+        // console.log(add([1,2]));
+
+        // [[1,2],[3,4]].map(([a,b]) => a+b);
+
+        // function move({x=0,y=0}={}){
+        //     return [x, y];
+        // }
+
+        // console.log(move({x: 3, y:8}));
+        // console.log(move({x: 3}));
+        // console.log(move({}));
+        // console.log(move());
+
+        // function move({x, y}={x:0,y:0}){
+        //     return [x, y];
+        // }
+
+        // console.log(move({x: 3, y:8}));
+        // console.log(move({x: 3}));
+        // console.log(move({}));
+        // console.log(move());
+
+        // let x = 1;
+        // let y = 2;
+
+        // [x, y] = [y, x];
+        // console.log(x); //2
+        // console.log(y); //1
+
+        // function example(){
+        //     return [1,2,3];
+        // }
+        // let [a,b,c] = example();
+
+        // console.log(a);
+        // console.log(b);
+        // console.log(c);
+
+        // function example(){
+        //     return {
+        //         foo: 1,
+        //         bar: 2
+        //     }
+        // }
+        // let {foo, bar} = example();
+        // console.log(foo);
+        // console.log(bar);
+
+        // let jsonData = {
+        //     id: 42,
+        //     status: 'OK',
+        //     data: [867, 5309]
+        // }
+
+        // let {id, status, data: number} = jsonData;
+
+        // console.log(id, status, number);
+    </script>
+</body>
+</html>
