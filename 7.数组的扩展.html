@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>7.数组的扩展</title>
+</head>
+<body>
+    <script>
+    // console.log(Number.isFinite(15));   //true
+    // console.log(Number.isFinite(0.8));  //true
+    // console.log(Number.isFinite(NaN));  //false
+    // console.log(Number.isFinite(Infinity)); //false
+    // console.log(Number.isFinite(-Infinity));    //false
+    // console.log(Number.isFinite('foo'));    //false
+    // console.log(Number.isFinite('15')); //false
+    // console.log(Number.isFinite(true)); //false
+
+    // console.log(Number.parseInt('12.34'));
+    // console.log(Number.parseFloat('123.45#'));
+
+    // console.log(Number.isInteger(25));  //true
+    // console.log(Number.isInteger(25.1));    //false
+
+    // console.log(Number.isInteger(25));  //true
+    // console.log(Number.isInteger(25.0));    //true
+
+    // console.log(Number.isInteger());    //false
+    // console.log(Number.isInteger(null));    //false
+    // console.log(Number.isInteger('15'));    //false
+    // console.log(Number.isInteger(true));    //false
+
+    // Math.trunc方法用于去除一个数的小数部分，返回整数部分。
+    // console.log(Math.trunc(4.1));   //4
+    // console.log(Math.trunc(4.9));   //4
+    // console.log(Math.trunc(-4.1));  //-4
+    // console.log(Math.trunc(-4.9));  //-4
+    // console.log(Math.trunc(-0.1234));   //-0
+
+    // console.log(Math.trunc('123.456')); //123
+    // console.log(Math.trunc(true));   //1
+    // console.log(Math.trunc(false));   //0
+    // console.log(Math.trunc(null));   //0
+
+    // console.log(Math.trunc(NaN));   //NaN
+    // console.log(Math.trunc('foo')); //NaN
+    // console.log(Math.trunc());      //NaN
+    // console.log(Math.trunc(undefined)); //NaN
+
+    // Math.sign方法用来判断一个数到底是正数、负数、还是零。
+    // console.log(Math.sign(-5)); //-1
+    // console.log(Math.sign(5));  //1
+    // console.log(Math.sign(0));  //0
+    // console.log(Math.sign(-0)); //-1
+    // console.log(Math.sign(NaN));//NaN
+
+    // console.log(Math.sign(''));     //0 
+    // console.log(Math.sign(true));   //1
+    // console.log(Math.sign(false));  //0
+    // console.log(Math.sign(null));   //0
+    // console.log(Math.sign('9'));    //1
+    // console.log(Math.sign('foo'));  //NaN
+    // console.log(Math.sign());       //NaN
+    // console.log(Math.sign(undefined));//NaN
+
+    // Math.cbrt()方法用于计算一个数的立方根。
+    console.log(Math.cbrt(-1)); //-1
+    console.log(Math.cbrt(0));  //0
+    console.log(Math.cbrt(1));  //1
+    console.log(Math.cbrt(2));  //1.2599210498948732
+    </script>
+</body>
+</html>
