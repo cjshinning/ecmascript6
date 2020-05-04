@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>8.函数的扩展</title>
+</head>
+<body>
+    <script>
+    // 1.默认值
+    // function log(x, y){
+    //     y = y || 'World';
+    //     console.log(x, y);
+    // }
+
+    // log('Hello');
+    // log('Hello', 'china');
+    // log('Hello', '');
+
+    // function log(x, y='world'){
+    //     console.log(x, y);
+    // }
+
+    // log('Hello');
+    // log('Hello', 'china');
+    // log('Hello', '');
+
+    // function Point(x=0,y=0){
+    //     this.x = x;
+    //     this.y = y;
+    // }
+    // const p = new Point();
+    // console.log(p);     //{x: 0, y: 0}
+
+    // function foo(x=5){
+    //     // let x = 1;  //Uncaught SyntaxError: Identifier 'x' has already been declared
+    //     const x = 2;    //Uncaught SyntaxError: Identifier 'x' has already been declared
+    // }
+
+    // function foo({x,y=5}){
+    //     console.log(x,y);
+    // }
+    // foo({});    //undefined 5
+    // foo({x:1})  //1 5
+    // foo({x:1, y:2});    //1 2
+    // foo();  //Uncaught TypeError: Cannot destructure property 'x' of 'undefined' as it is undefined.
+    
+    // function foo({x,y=5} = {}){
+    //     console.log(x, y);
+    // }
+
+    // foo();  //undefined 5
+
+    // function fetch(url, {body='',method='GET',headers={}}){
+    //     console.log(method);
+    // }
+
+    // fetch('http:baidu.com', {});    //GET
+    // fetch('http:baidu.com');    //Uncaught TypeError: Cannot read property 'body' of undefined
+    
+    // function fetch(url, {body='',method='GET',headers={}} = {}){
+    //     console.log(method);
+    // }
+
+    // fetch('http:baidu.com');    //GET
+
+    // function f(x=1,y){
+    //     return [x,y];
+    // }
+
+    // console.log(f());   //[1, undefined]
+    // console.log(f(2));  //[2, undefined]
+    // // console.log(f(, 1));     //Uncaught SyntaxError: Unexpected token ','
+    // console.log(f(undefined, 1));   //[1, 1]
+
+    //指定了默认值以后，函数的length属性，将返回没有指定默认值的参数个数。
+    // console.log((function(a){}).length);    //1
+    // console.log((function(a=5){}).length);  //0
+    // console.log((function(a,b,c=5){}).length);  //2
+
+    // 2.rest参数
+    // function add(...values){
+    //     let sum = 0;
+    //     for(var val of values){
+    //         sum += val;
+    //     }
+    //     return sum;
+    // }
+
+    // console.log(add(2,5,3));    //10
+
+    // // arguments变量的写法
+    // function sortNumbers(){
+    //     return Array.prototype.slice.call(arguments).sort();
+    // }
+
+    // // rest参数的写法
+    // const sortNumbers = (...numbers) => numbers.sort();
+
+    // function push(array, ...items){
+    //     items.forEach(function(item){
+    //         array.push(item);
+    //         console.log(item);
+    //     })
+    // }
+
+    // var a = [];
+    // push(a, 1, 2, 3);
+
+    // 4.name属性
+    // function foo(){
+
+    // }
+    // console.log(foo.name);  //foo
+
+    // var f = function(){};
+
+    // console.log(f.name);    //f
+
+    // const bar = function baz(){};
+
+    // console.log(bar.name);  //baz
+
+    // 5.箭头函数
+
+    // var f = v => v;
+
+    // // 等同于
+    // var f = function (v){
+    //     return v;
+    // }
+
+    // var f = () => 5;
+    // // 等同于
+    // var f = function(){ return 5; }
+
+    // var sum = (num1, num2) => num1 + num2;
+    // // 等同于
+    // var sum = function(num1, num2){
+    //     return num1 + num2;
+    // }
+
+    // var sum = (num1, num2) => {
+    //     return num1 +num2;
+    // }
+
+    // 正常函数的写法
+    // [1,2,3].map(function(x){
+    //     return x * x;
+    // })
+
+    // 箭头函数写法
+    // [1,2,3].map(x => x*x);
+
+    // 正常函数的写法
+    // var result = [22,1,43,255,4,7,84,3].sort(function(a, b){
+    //     return a - b;
+    // })
+    // console.log(result);
+
+    // 箭头函数的写法
+    // var result = [22,1,43,255,4,7,84,3].sort((a, b) => a - b);
+    // console.log(result);
+
+    function foo(){
+        setTimeout(() => {
+            console.log('id:', this.id);
+        }, 100)
+    }
+
+    var id = 21;
+    foo.call({id: 42}); //42
+    </script>
+</body>
+</html>
