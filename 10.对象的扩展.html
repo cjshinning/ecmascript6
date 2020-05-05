@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.属性的简洁表示法
+        // const foo = 'bar';
+        // const baz = {foo};
+
+        // console.log(baz);   //{foo: "bar"}
+
+        // // 等同于
+        // const baz = {foo: foo};
+
+        // function f(x, y){
+        //     return {x, y};
+        // }
+
+        // 等同于
+        // function f(x, y){
+        //     return {x: x, y: y};
+        // }
+
+        // console.log(f(1, 2));   //{x: 1, y: 2}
+
+        // 除了属性简写，方法页可以简写
+        // const o = {
+        //     method(){
+        //         return 'hello!';
+        //     }
+        // }
+
+        // // 等同于
+        // const o = {
+        //     method: function(){
+        //         return 'hello!';
+        //     }
+        // }
+
+        // let birth = '2000/01/01';
+
+        // const Person = {
+        //     name: '张三',
+        //     // 等同于birth:birth
+        //     birth,
+        //     //登同于hello: function(){...}
+        //     hello(){
+        //         console.log('我的名字是', this.name);
+        //     }
+        // }
+
+        // Person.hello();     //我的名字是 张三
+
+        // function getPoint(){
+        //     const x = 1;
+        //     const y = 10;
+        //     return {x, y};
+        // }
+        // console.log(getPoint());    //{x: 1, y: 10}
+
+        // let ms = {};
+
+        // function getItem(key){
+        //     return key in ms ? ms[key]: null
+        // }
+
+        // function setItem(key, value){
+        //     ms[key] = value;
+        // }
+
+        // function clear(){
+        //     ms = {};
+        // }
+
+        // module.exports = {getItem, setItem, clear};
+
+        // // 等同于
+        // module.exports = {
+        //     getItem: getItem,
+        //     setItem: setItem,
+        //     clear: clear
+        // }
+
+        // obj.foo = true;
+        // obj['a'+'bc'] = 123;
+
+        // var obj = {
+        //     foo: true,
+        //     abc: 123
+        // }
+
+        // let propKey = 'foo';
+
+        // let obj = {
+        //     [propKey]: true,
+        //     ['a'+'bc']: 123
+        // }
+
+        // let lastWord = 'last word';
+
+        // const a = {
+        //     'first word': 'hello',
+        //     [lastWord]: 'world'
+        // }
+
+        // console.log(a['first word']);   //hello
+        // console.log(a[lastWord]);       //world
+        // console.log(a['last word']);    //world
+
+        // let obj = {
+        //     ['h'+'ello'](){
+        //         return 'hi';
+        //     }
+        // }
+
+        // console.log(obj.hello());   //hi
+
+        // 3.方法的name属性
+        // const person = {
+        //     sayName(){
+        //         console.log('hello');
+        //     }
+        // }
+
+        // console.log(person.sayName.name);   //sayName
+
+        // 4.属性的可枚举性和遍历
+        // let obj = {foo: 123};
+        // console.log(Object.getOwnPropertyDescriptor(obj, 'foo'));
+
+        // let obj = {foo: 123, bar: 456, baz: 789};
+
+        // for(let i in obj){
+        //     console.log(i, obj[i]);
+        // }
+
+        // console.log(Object.keys(obj))   //["foo", "bar", "baz"]
+            
+        // 5.super关键词
+        // const proto = {
+        //     foo: 'hello'
+        // }
+
+        // const obj = {
+        //     foo: 'world',
+        //     find(){
+        //         return super.foo;
+        //     }
+        // }
+        
+        // Object.setPrototypeOf(obj, proto);
+        // console.log(obj.find());    //hello
+
+        // 6.对象的扩展运算符
+        // let {x,y,...z} = {x:1,y:2,a:3,b:4};
+        // console.log(x);     //1
+        // console.log(y);     //2
+        // console.log(z);     //{a: 3, b: 4}
+
+        // let obj = {a: {b: 1}};
+        // let {...x} = obj;
+        // obj.a.b = 2;
+        // console.log(x.a.b); //2
+
+        // const o = Object.create({x: 1, y: 2});
+        // o.z = 3;
+
+        // let {x, ...newObj} = o;
+        // let {y, z} = newObj;
+        // console.log(x);     //1
+        // console.log(y);     //undefined
+        // console.log(z);     //3
+
+        // 扩展运算符
+        // let z = {a: 3, b: 4};
+        // let n = {...z};
+        // console.log(n); //{a: 3, b: 4}
+
+        // let foo = {...['a', 'b', 'c']};
+        // console.log(foo);   //{0: "a", 1: "b", 2: "c"}
+
+        // console.log({...'hello'});  //0: "h", 1: "e", 2: "l", 3: "l", 4: "o"}
+
+        // let aClone = {...a};
+
+        // let aClone = Object.assign({}, a);
+
+        // 使用扩展运算符合并对象
+        // let a = {x:1};
+        // let b = {y:2};
+        // let ab = {...a, ...b};
+        // // 等同于
+        // // let ab = Object.assign({}, a, b);
+        // console.log(ab);    //{x: 1, y: 2}
+
+        // 7.链判断运算符
+        const fooValue = fooInput?fooInput.value : undefined;
+    </script>
+</body>
+</html>
