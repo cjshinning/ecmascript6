@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background: green;
+        font-size: 48px;
+        text-align: center;
+        line-height: 100px;
+    }
+    /* 1.flex-direction属性决定主轴的方向 */
+    /* 2.flex-wrap属性：默认下项目都排在一条线上，该属性定义，如果一条轴线排不下，如果换行 */
+    /* 3.flex-row属性是flex-direction和flex-wrap属性的简写形式 */
+    /* 4.justify-content属性定义了项目在主轴上的对齐方式 */
+
+    /* 5.align-item属性定义项目在交叉轴上如何对齐 */
+    /* 6.align-content属性定义了多根轴线对其方式。如果只有一根轴线不起作用 */
+    .container{
+        display: flex;
+        /* flex-direction: row; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column; */
+        /* flex-direction: column-reverse; */
+        /* flex-wrap: nowrap; */
+        /* flex-wrap: wrap; */
+        /* flex-wrap: wrap-reverse; */
+        /* flex-flow: row wrap; */
+        /* justify-content: flex-start; */
+        justify-content: flex-end;
+        /* justify-content: center; */
+        /* justify-content: space-between; */
+        /* justify-content: space-around; */
+
+        /* align-items: flex-start; */
+        /* align-items: flex-end; */
+        /* align-items: center; */
+        /* align-items: baseline; */
+        /* align-items: stretch; */
+        /* flex-wrap: wrap; */
+        /* align-content: flex-start; */
+        /* align-content: flex-end; */
+        /* align-content: center; */
+        /* align-content: stretch; */
+        align-content: space-between;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" style="height:600px;background: #c8c8c8;">
+        <div class="box">1</div>
+        <div class="box" style="height: 200px;">2</div>
+        <div class="box" style="height: 250px;">3</div>
+        <div class="box">4</div>
+        <!-- <div class="box">1</div>
+        <div class="box" style="height: 200px;">2</div>
+        <div class="box" style="height: 250px;">3</div>
+        <div class="box">4</div>
+        <div class="box">1</div>
+        <div class="box" style="height: 200px;">2</div>
+        <div class="box" style="height: 250px;">3</div>
+        <div class="box">4</div> -->
+    </div>
+</body>
+</html>

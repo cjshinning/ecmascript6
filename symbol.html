@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6引入一种新的原始数据类型Symbol，表示独一无二的值
+        // let s = Symbol();
+
+        // console.log(typeof s);  //symbol
+
+        // let s1 = Symbol('foo');
+        // let s2 = Symbol('bar');
+
+        // console.log(s1);    //Symbol(foo)
+        // console.log(s2);    //Symbol(bar)
+
+        // console.log(s1.toString());
+        // console.log(s2.toString());
+        
+        // 如果Symbol的参数是一个对象，就会调用该对象的toString方法，将其转为字符串，然后才生成一个Symbol值
+        // const obj = {
+        //     toString(){
+        //         return 'abc';
+        //     }
+        // }
+        // const sym = Symbol(obj);
+        // console.log(sym);   //Symbol(abc)
+        
+        // 相同参数的Symbol返回值不相等
+        // let s1 = Symbol();
+        // let s2 = Symbol();
+        
+        // console.log(s1 === s2); //false
+
+        // let s1 = Symbol('foo');
+        // let s2 = Symbol('foo');
+        
+        // console.log(s1 === s2); //false
+            
+        // Symbol值不能与其他类型的值进行运算，会报错
+        // let sym = Symbol('My symbol');
+
+        // console.log('you symbol is' + sym); //Cannot convert a Symbol value to a string
+
+        // Symbol值可以显示转换位字符串
+        // let sym = Symbol('My symbol');
+
+        // console.log(String(sym));   //Symbol(My symbol)
+        // console.log(sym.toString());    //Symbol(My symbol)
+
+        // const sym = Symbol('foo');
+
+        // console.log(sym.description);   //foo
+
+        // let mySymbol = Symbol();
+
+        // let a = {};
+        // a[mySymbol] = 'Hello';
+
+        // let a = {
+        //     [mySymbol]: 'Hello'
+        // }
+
+        // let a = {};
+        // Object.defineProperty(a, mySymbol, {value: 'Hello'});
+
+        // console.log(a[mySymbol]);   //Hello
+
+        // const mySymbol = Symbol();
+        // const a = {};
+        // a.mySymbol = 'Hello';
+        // console.log(a[mySymbol]);   //undefined
+        // console.log(a['mySymbol']); //Hello
+
+        // let s = Symbol();
+
+        // let obj = {
+        //     [s]: function(arg){}
+        // };
+
+        // console.log(obj[s](123));
+
+        // const obj = {};
+        // let a = Symbol('a');
+        // let b = Symbol('b');
+
+        // obj[a] = 'Hello';
+        // obj[b] = 'World';
+
+        // const objectSymbols = Object.getOwnPropertySymbols(obj);
+
+        // console.log(objectSymbols); //[Symbol(a), Symbol(b)]
+
+        // const obj = {};
+        // let foo = Symbol('foo');
+
+        // obj[foo] = 'bar';
+
+        // for(let i in obj){
+        //     console.log(i);
+        // }
+
+        // console.log(Object.getOwnPropertyNames(obj));   //[]
+        // console.log(Object.getOwnPropertySymbols(obj)); //[Symbol(foo)]
+
+        // let obj = {
+        //     [Symbol('my_key')]: 1,
+        //     enum: 2,
+        //     nonEnum: 3
+        // };
+
+        // console.log(Reflect.ownKeys(obj));  //["enum", "nonEnum", Symbol(my_key)]
+
+        // 由于以Symbol值作为见面，不会被常规方法遍历到，我们可以利用这个特性，位对象定义一些非私有的，但是又希望只用于内部的方法
+        // let size = Symbol('size');
+
+        // class Collection {
+        //     constructor(){
+        //         this[size] = 0;
+        //     }
+        //     add(item){
+        //         this[this[size]] = item;
+        //         this[size]++;
+        //     }
+        //     static sizeOf(instance) {
+        //         return instance[size];
+        //     }
+        // }
+
+        // let x = new Collection();
+        // Collection.sizeOf(x);
+
+        // x.add('foo');
+        // Collection.sizeOf(x);
+
+        // Object.keys(x);
+        // Object.getOwnPropertyNames(x);
+        // Object.getOwnPropertySymbols(x);
+
+        // let s1 = Symbol.for('foo');
+        // let s2 = Symbol.for('foo');
+
+        // console.log(s1 === s2); //true
+
+        let s1 = Symbol.for('foo');
+        console.log(Symbol.keyFor(s1)); //foo
+
+        let s2 = Symbol('foo'); 
+        console.log(Symbol.keyFor(s2)); //undefined
+    </script>
+</body>
+</html>

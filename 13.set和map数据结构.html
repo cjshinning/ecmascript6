@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myDiv"></div>
+    <script>
+        // set类似于数组，但是成员的值是唯一的
+        // const s = new Set();
+
+        // [,2,3,5,4,5,2,2].forEach(x => s.add(x));
+
+        // for(let i of s){
+        //     console.log(i);
+        // }
+        //2,3,5,4
+
+        // const set = new Set([1,2,3,4,4]);
+        // console.log([...set]);  //[1, 2, 3, 4]
+        
+        // 去除数组的重复成员
+        // let arr = [2,3,2,2,4,5,3,5,6];
+        // console.log(...new Set(arr));   //2 3 4 5 6
+
+        // 去除字符串里的重复字符
+        // console.log([...new Set('ababbcc')].join('')); //abc
+
+        // const items = new Set([1,2,3,4,5]);
+        // const array = Array.from(items);
+        // console.log(array);
+
+        // function dedupe(arr){
+        //     return Array.from(new Set(arr));
+        // }
+
+        // console.log(dedupe([1,1,2,3]));     //[1, 2, 3]
+        // const data = {};
+        // const element = document.getElementById('myDiv');
+
+        // data[element] = 'metadata';
+        // console.log(element);
+
+        // Object 结构提供了“字符串—值”的对应，Map 结构提供了“值—值”的对应
+        // const m = new Map();
+        // const o = {p: 'Hello world'};
+
+        // m.set(o, 'content');
+        // console.log(m.get(o));  //content
+            
+        // console.log(m.has(o));  //true
+        // m.delete(o);    
+        // console.log(m.has(o));  //false
+
+        // const map = new Map([
+        //     ['name', '张三'],
+        //     ['title', 'Author']
+        // ]);
+
+        // console.log(map.size);
+        // console.log(map.has('name'));
+        // console.log(map.get('name'));
+
+        // const map = new Map();
+        // const k1 = ['a'];
+        // const k2 = ['a'];
+
+        // map
+        //     .set(k1, 111)
+        //     .set(k2, 222)
+
+        // console.log(map.get(k1));   //111
+        // console.log(map.get(k2));   //222
+
+        // let map = new Map();
+
+        // map.set(-0, 123);
+        // console.log(map.get(+0));   //123
+
+        // const map = new Map();
+        // map.set('foo', true);
+        // map.set('bar', false);
+
+        // console.log(map.size);
+
+        // const m = new Map();
+
+        // m.set('edition', 6);
+        // m.set(262, 'standard');
+        // m.set(undefined, 'nah');
+
+        // console.log(m)
+
+        // const m = new Map();
+
+        // const hello = function(){ console.log('hello') };
+        // m.set(hello, 'Hello ES6');
+
+        // console.log(m.get(hello));  //Hello ES6
+
+        // const m = new Map();
+
+        // m.set('edition', 6);
+        // m.set(262, 'standard');
+        // m.set(undefined, 'nah');
+
+        // console.log(m.has('edition'));  //true
+        // console.log(m.has('years'));    //false
+        // console.log(m.has(262));        //true
+        // console.log(m.has(undefined));  //true
+
+        // const m = new Map();
+        // m.set(undefined, 'nah');
+        // m.has(undefined);
+
+        // m.delete(undefined);
+        // console.log(m.has(undefined));  //false
+
+        // let map = new Map();
+        // map.set('foo', true);
+        // map.set('bar', false);
+
+        // console.log(map.size);  //2
+        // map.clear();
+        // console.log(map.size);  //0
+
+        // const map = new Map([
+        //     ['F', 'no'],
+        //     ['T', 'yes']
+        // ]);
+
+        // for(let key of map.keys()){
+        //     console.log(key);
+        // }
+        // // F
+        // // T
+
+        // for(let value of map.values()){
+        //     console.log(value); 
+        // }
+        // // no
+        // // yes
+
+        // for(let item of map.entries()){
+        //     console.log(item[0],item[1]);
+        // }
+        // // F no
+        // // T yes
+
+        // for(let [key, value] of map.entries()){
+        //     console.log(key, value);
+        // }
+
+        // const map = new Map([
+        //     [1, 'one'],
+        //     [2, 'two'],
+        //     [3, 'three']
+        // ]);
+
+        // console.log([...map.keys()]);   //[1, 2, 3]
+        // console.log([...map.values()]); //["one", "two", "three"]
+        // console.log([...map.entries()]);    //[[1,'one'], [2, 'two'], [3, 'three']]
+        // console.log([...map]);  //[[1,'one'], [2, 'two'], [3, 'three']]
+
+        // Map转为数组
+        // const myMap = new Map()
+        //     .set(true, 7)
+        //     .set({foo: 3}, ['abc'])
+        // console.log(...myMap);  //[ [ true, 7 ], [ { foo: 3 }, [ 'abc' ] ] ]
+
+        // 数组转为Map
+        // console.log(new Map([
+        //     [true, 7],
+        //     [{
+        //         foo: 3
+        //     },['abc']]
+        // ]));
+
+        // var xhr = new XMLHttpRequest();
+
+        // xhr.open('GET', 'http://hdapi.37.com/?c=c_reserve&a=get_join_num&f=tplhd&alias_info=tplhd_g596_200506225915&feature_key=reserve_1', true);
+
+        // xhr.send();
+
+        // xhr.onreadystatechange = function(){
+        //     if(xhr.readyState == 4 && xhr.status == 200){
+        //         console.log(xhr.responseText);
+        //     }
+        // }
+
+        // Map转为对象
+        // function strMapToObj(strMap){
+        //     let obj = Object.create(null);
+        //     for(let [k,v] of strMap){
+        //         obj[k] = v;
+        //     }
+        //     return obj;
+        // }
+
+        // const myMap = new Map()
+        //     .set('yes', true)
+        //     .set('no', false);
+
+        // console.log(strMapToObj(myMap));    //{yes: true, no: false}
+
+        // 对象转为Map
+        // let obj = {'a': 1, 'b': 2};
+        // let map = new Map(Object.entries(obj));
+        // console.log(map);   //{"a" => 1, "b" => 2}
+
+        // function objToStrMap(obj){
+        //     let strMap = new Map();
+        //     for(let k of Object.keys(obj)){
+        //         strMap.set(k, obj[k]);
+        //     }
+        //     return strMap;
+        // }
+
+        // console.log(objToStrMap({'yes': true, 'no': false}));   //{"yes" => true, "no" => false}
+
+        // function strMapToJson(strMap){
+        //     return JSON.stringify(strMapToObj(strMap));
+        // }
+        // let myMap = new Map().set('yes', true).set('no', false);
+        // console.log(strMapToJson(myMap));   //{"yes":true,"no":false}
+
+        // function mapToArrayJson(map){
+        //     return JSON.stringify([...map]);
+        // }
+        // let myMap = new Map().set(true, 7).set({foo: 3}, ['abc']);
+        // console.log(myMap);
+
+        // 4.WeakMap
+        // const wm1 = new WeakMap();
+        // const key = {foo: 1};
+        // wm1.set(key, 2);
+        // console.log(wm1.get(key));  //2
+
+        // const k1 = [1,2,3];
+        // const k2 = [4,5,6];
+        // const wm2 = new WeakMap([[k1, 'foo'], [k2, 'bar']]);
+        // console.log(wm2.get(k2));   //bar
+
+        // WeakMap和Map区别：
+        // WeakMap只接受对象作为键名，不接受其他类型作为键名
+        // const map = new WeakMap();
+        // map.set(1, 2);
+        // map.set(Symbol(), 2);
+        // map.set(null, 2);
+    </script>
+</body>
+</html>

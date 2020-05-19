@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 创建一个正则表达式
+        // 1.字面量
+        var re = /ab+c/;
+        // 2.调用RegExp对象的构造函数
+        var re = new RegExp('ab+c');
+        // 使用特殊字符
+        // \：特殊字符转义，比如b比较匹配b字符，\b表示匹配边界
+        // ^：匹配输入的开始
+        // console.log(/^A/.test('an A'));      //false
+        // console.log(/^A/.test('An E'));     //true
+
+        setTimeout(()=>{
+            console.log(1);
+        }, 50);
+        setTimeout(()=>{
+            console.log(2);
+        }, 0);
+        console.time('for takes time:');
+        for(let i=0;i<1000000;i++){};
+        console.timeEnd('for takes time:');
+        setTimeout(()=>{
+            console.log(3);
+        }, 20);
+        console.log(4);
+    </script>
+</body>
+</html>
