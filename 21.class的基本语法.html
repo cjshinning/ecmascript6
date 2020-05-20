@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1、es5
+        // function Point(x, y){
+        //     this.x = x;
+        //     this.y = y;
+        // }
+        // Point.prototype.toString = function(){
+        //     return '(' + this.x + ', ' + this.y +')';
+        // }
+        // var p = new Point(1, 2);
+        // console.log(p.toString());
+        // (1, 2)
+        
+        // 2、es6
+        // class Point{
+        //     constructor(x, y){
+        //         this.x = x;
+        //         this.y = y;
+        //     }
+        //     toString(){
+        //         return '(' + this.x + ', ' + this.y + ')';
+        //     }
+        // }
+        
+        // let p = new Point(1, 2);
+        // console.log(p.toString());
+        // // (1, 2)
+        // // console.log(typeof Point);  //function
+
+        // console.log(p.hasOwnProperty('x')); //true
+        // console.log(p.hasOwnProperty('y')); //true
+        // console.log(p.hasOwnProperty('toString'));  //false
+        // console.log(p.__proto__.hasOwnProperty('toString'));    //true
+
+        // var p1 = new Point(2, 3);
+        // var p2 = new Point(3, 2);
+
+        // console.log(p1.__proto__ === p2.__proto__); //true
+
+        // class MyClass {
+        //     constructor(){
+
+        //     }
+        //     get prop(){
+        //         return 'getter';
+        //     }
+        //     set prop(value){
+        //         console.log('setter: ' + value);
+        //     }
+        // }
+
+        // let inst = new MyClass();
+
+        // inst.prop = 123;    //setter: 123
+
+        // console.log(inst.prop); //getter
+
+        // 2、静态方法：类相当于实例中的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法钱，加上static关键词，就表示该方法不会被实例继承，而是通过类直接调用，这就是“静态方法”
+        // class Foo {
+        //     static classMethod(){
+        //         return 'hello';
+        //     }
+        // }
+        // console.log(Foo.classMethod()); //hello
+
+        // var foo = new Foo();
+        // console.log(foo.classMethod()); //Uncaught TypeError: foo.classMethod is not a function
+
+        // class Foo{
+        //     static classMethod(){
+        //         return 'hello';
+        //     }
+        // }
+
+        // class Bar extends Foo{}
+        
+        // console.log(Bar.classMethod()); //hello
+
+        class Foo{
+            static classMethod(){
+                return 'hello';
+            }
+        }
+
+        class Bar extends Foo{
+            static classMethod(){
+                return super.classMethod() + ', too';
+            }
+        }
+        
+        console.log(Bar.classMethod()); //hello, too
+    </script>
+</body>
+</html>
